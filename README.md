@@ -22,6 +22,9 @@ router kurmak ya da modemi köprü (bridge) moda almak istediğinizde bu şifre 
 elinizde olmaz. **ZentraPPOE**, modem internete bağlanırken giden kimlik doğrulama
 bilgisini yakalayarak **kullanıcı adı ve şifreyi size geri verir.**
 
+Normalde bu şifreyi öğrenmek için ISP'nizin çağrı merkezini arayıp **30–40 dakika**
+telefonda uğraşmanız gerekebilir — ZentraPPOE bunu **kendiniz, dakikalar içinde** halleder.
+
 > ⚠️ **Yasal uyarı:** Bu aracı **yalnızca kendi hattınızda** veya **yazılı olarak
 > yetkilendirildiğiniz** bir hat üzerinde kullanın. Başkasının bilgilerini izinsiz
 > ele geçirmek suçtur. Sorumluluk kullanıcıya aittir.
@@ -31,7 +34,7 @@ bilgisini yakalayarak **kullanıcı adı ve şifreyi size geri verir.**
 Modem internete bağlanmak için ISP'ye "ben buyum" diye kimlik doğrulaması yapar.
 ZentraPPOE, bilgisayarınızı **sahte bir ISP sunucusu** gibi davrandırır; modem bağlanmaya
 çalışınca içindeki gömülü kullanıcı adı/şifreyi gönderir ve araç bunu ekrana yazar.
-Türk Telekom/TTNet gibi sağlayıcılarda trafik **VLAN 35** etiketiyle gider — araç bunu
+Bazı ISP'lerde trafik bir **VLAN** etiketiyle (çoğunlukla **VLAN 35**) gider — araç bunu
 otomatik algılar.
 
 ### Neye ihtiyacın var?
@@ -49,7 +52,7 @@ otomatik algılar.
 2. [Npcap](https://npcap.com/)'i kur (bir kere).
 3. Modemin **WAN kablosunu** bilgisayarına tak.
 4. `ZentraPPOE.exe`'ye **çift tıkla** → **"Evet"** (yönetici izni).
-5. Açılan siyah ekranda **VLAN** sorulur: TTNet için `35` yaz, bilmiyorsan **Enter** (otomatik).
+5. Açılan siyah ekranda **VLAN** sorulur: ISP'niz VLAN kullanıyorsa numarasını yaz (genelde `35`), bilmiyorsan **Enter** (otomatik).
 6. Modemi **kapat-aç** (veya WAN kablosunu sök-tak).
 7. Ekran **kırmızıdan yeşile** döner → kullanıcı adı ve şifre kutuda görünür. ✅
 
@@ -98,6 +101,9 @@ up a new router or to put the modem in bridge mode — but you don't have it. **
 captures the authentication the modem sends when it connects, and **gives you back the
 username and password.**
 
+Instead of spending **30–40 minutes** on the phone with your ISP's call center to get it,
+ZentraPPOE lets you do it **yourself, in minutes.**
+
 > ⚠️ **Legal notice:** Use this **only on your own line**, or a line you are **explicitly
 > authorized** to work on. Capturing someone else's credentials without permission is
 > illegal. You are responsible for how you use it.
@@ -106,7 +112,7 @@ username and password.**
 
 When a modem connects, it authenticates to the ISP. ZentraPPOE makes your computer act as
 a **fake ISP server**; the moment the modem tries to connect, it sends its stored
-username/password and the tool prints them. On providers like TTNet the traffic is tagged
+username/password and the tool prints them. On some ISPs the traffic is tagged
 with **VLAN 35** — the tool detects this automatically.
 
 ### What you need
@@ -124,7 +130,7 @@ with **VLAN 35** — the tool detects this automatically.
 2. Install [Npcap](https://npcap.com/) (once).
 3. Plug the modem's **WAN cable** into your computer.
 4. **Double-click** `ZentraPPOE.exe` → **"Yes"** (admin).
-5. It asks for **VLAN**: type `35` for TTNet, or press **Enter** (auto-detect).
+5. It asks for **VLAN**: type your ISP's VLAN number if it uses one (often `35`), or press **Enter** (auto-detect).
 6. **Power-cycle** the modem (or re-plug the WAN cable).
 7. The screen turns from **red to green** → username and password appear. ✅
 
